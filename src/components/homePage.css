@@ -27,7 +27,7 @@ button{
 }
 .home{
     text-align: center;
-
+    align-content: center;
 }
 
 .greeting{
@@ -40,3 +40,4 @@ button{
     
 
 }
+
