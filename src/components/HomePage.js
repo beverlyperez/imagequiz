@@ -18,7 +18,7 @@ class HomePage extends React.Component {
             <div className="home">
                 <table className="pics">
                     <tr className="row1">
-                        <td><img src={cherryblossom} alt = "cherry" height={100} width={100} />Cherry Blossom</td>
+                        <td align="center"><img src={cherryblossom} alt = "cherry" height={100} width={100} /> Cherry Blossom </td>
                         <td><img src={daffodil} alt = "daffodil" height={100} width={100} /> Daffodil </td>
                         <td><img src={daisy} alt = "daisy" height={100} width={100}/> Daisy </td>
                         <td><img src={lily} alt = "lily" height={100} width={100} /> Lily </td>
