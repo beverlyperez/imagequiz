@@ -13,6 +13,10 @@ td {
     font-size: 20px;
 }
 
+label{
+    font-size: 100px;
+}
+
 .home{
     text-align: center;
 
@@ -24,7 +28,7 @@ td {
 }
 
 .onlyForm{
-    font-size: 50px;
+    font-size: 100px;
     padding: 30px;
     
 
