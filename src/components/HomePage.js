@@ -6,7 +6,7 @@ class HomePage extends React.Component {
     render(){
         
         return (
-            
+            <div>
             <table>
                 <tr>
                     <td><img src="./images/cherryblossom.png"> Cherry Blossom </img></td>
@@ -22,7 +22,8 @@ class HomePage extends React.Component {
                     <td><img src="./images/waterlily.png"> WaterLily </img></td>
                     
                 </tr>
-            </table>     
+            </table>   
+            </div>  
         );
     }
 
