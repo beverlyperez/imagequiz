@@ -54,7 +54,7 @@ class Login extends React.Component {
         }
         return (
             <div>
-               
+               <p className="userName">{this.state.username}</p>
                 <HomePage />
                 
             </div>
