@@ -5,7 +5,7 @@ import daffodil from './images/daffodil.png';
 import daisy from './images/daisy.jpg';
 import lily from './images/lily.jpg';
 import rose from './images/rose.png';
-import sunflower from './images/sundlower.png';
+import sunflower from './images/sunflower.png';
 import tulip from './images/tulip.png';
 import waterlily from './images/waterlily.png';
 
