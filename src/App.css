@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.loginButton {
+  float: right;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
