@@ -1,5 +1,6 @@
 import React from 'react';
 import HomePage from './HomePage';
+import './homePage.css';
 
 class Login extends React.Component {
     constructor(props){
@@ -54,7 +55,7 @@ class Login extends React.Component {
         }
         return (
             <div>
-               <p className="user">{this.state.username}</p>
+               <p className="user">Welcome {this.state.username}!</p>
                 <HomePage />
                 
             </div>
