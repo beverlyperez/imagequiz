@@ -48,7 +48,7 @@ class Login extends React.Component {
         }
         return (
             <div>
-                {this.state.signedIn ? 
+               
                 <form onSubmit={this.onSubmit}>
                     <label>Username:</label>
                     <input 
@@ -57,7 +57,7 @@ class Login extends React.Component {
                         onChange={this.handleChange}
                     ></input>
                     <button className="loginButton" type="submit">Login</button>                
-                </form> : <div> <HomePage /> </div>}
+                </form>
                 
                 </div>
 
