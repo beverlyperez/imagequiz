@@ -14,9 +14,16 @@ td {
 }
 
 label{
-    font-size: 100px;
+    font-size: 50px;
 }
 
+input{
+    height: 50px;
+}
+
+button{
+    font-size: 50px;
+}
 .home{
     text-align: center;
 
@@ -28,7 +35,6 @@ label{
 }
 
 .onlyForm{
-    font-size: 100px;
     padding: 30px;
     
 
