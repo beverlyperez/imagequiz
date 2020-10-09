@@ -35,16 +35,16 @@ class Login extends React.Component {
         if((!this.state.signedIn) && (!this.state.showHomePage)){
             return (
                 <div>
-                    <form onSubmit={this.onSubmit}>
-                    <label>Username:</label>
-                    <input 
-                        type="text" 
-                        name="username"
-                        value={this.state.username} 
-                        onChange={this.handleChange}
-                    ></input>
-                    <button className="loginButton" type="submit">Login</button>                
-                    
+                    <form className="onlyForm" onSubmit={this.onSubmit}>
+                        <label>Username:</label>
+                        <input 
+                            type="text" 
+                            name="username"
+                            value={this.state.username} 
+                            onChange={this.handleChange}
+                        ></input>
+                        <button className="loginButton" type="submit">Login</button>                
+                        
                     </form>
                     
                     </div>
@@ -54,8 +54,10 @@ class Login extends React.Component {
         }
         return (
             <div>
+                <div className="greeting">
                 <p>Welcome</p>
-                <p className="user">{this.state.username}</p>  
+                <p>{this.state.username}</p>  
+                </div>
                 <HomePage />
             </div>
 

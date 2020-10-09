@@ -4,3 +4,19 @@ td img{
     margin-right: auto;
 
 }
+p{
+    display: inline;
+}
+td {
+    text-align: center;
+    padding: 20px;
+}
+
+.home{
+    text-align: center;
+
+}
+
+.greeting{
+    font-size: 40px;
+}

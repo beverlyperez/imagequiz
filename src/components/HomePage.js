@@ -18,17 +18,17 @@ class HomePage extends React.Component {
             <div className="home">
                 <table className="pics">
                     <tr className="row1">
-                        <td align="center"><img src={cherryblossom} alt = "cherry" height={100} width={100} /> Cherry Blossom </td>
-                        <td><img src={daffodil} alt = "daffodil" height={100} width={100} /> Daffodil </td>
-                        <td><img src={daisy} alt = "daisy" height={100} width={100}/> Daisy </td>
-                        <td><img src={lily} alt = "lily" height={100} width={100} /> Lily </td>
+                        <td><img src={cherryblossom} alt = "cherry" height={150} width={150} /> Cherry Blossom </td>
+                        <td><img src={daffodil} alt = "daffodil" height={150} width={150} /> Daffodil </td>
+                        <td><img src={daisy} alt = "daisy" height={150} width={150}/> Daisy </td>
+                        <td><img src={lily} alt = "lily" height={150} width={150} /> Lily </td>
                         
                     </tr>
                     <tr className="row2">
-                        <td><img src={rose} alt = "rose" height={100} width={100} /> Rose </td>
-                        <td><img src={sunflower} alt = "sunflower" height={100} width={100} /> Sunflower </td>
-                        <td><img src={tulip} alt = "tulip" height={100} width={100} /> Tulip </td>
-                        <td><img src={waterlily} alt = "waterlily" height={100} width={100} /> WaterLily </td>
+                        <td><img src={rose} alt = "rose" height={150} width={150} /> Rose </td>
+                        <td><img src={sunflower} alt = "sunflower" height={150} width={150} /> Sunflower </td>
+                        <td><img src={tulip} alt = "tulip" height={150} width={150} /> Tulip </td>
+                        <td><img src={waterlily} alt = "waterlily" height={150} width={150} /> WaterLily </td>
                         
                     </tr>
                 </table>   

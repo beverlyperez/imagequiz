@@ -1,7 +1,8 @@
-
-.loginButton {
-  float: right;
+.App {
+  background-color: bisque;
+  text-align: center;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
