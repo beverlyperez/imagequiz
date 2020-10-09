@@ -20,18 +20,26 @@ class Login extends React.Component {
         
 
     }
+    
+    handleChange = (event) =>{
+        const value = event.target.value;
+        const name = event.target.name;
+        this.setState({
+            [name]: value
+        });
 
+    }
   
 
     render(){
-
-        if(!this.state.signedIn){
+        if((!this.state.signedIn) && (!this.state.showHomePage)){
             return (
                 <div>
                     <form onSubmit={this.onSubmit}>
                     <label>Username:</label>
                     <input 
                         type="text" 
+                        name="username"
                         value={this.state.username} 
                         onChange={this.handleChange}
                     ></input>
