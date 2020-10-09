@@ -27,11 +27,17 @@ class Login extends React.Component {
     }
 
     render(){
-        if((!this.state.signedIn) && this.state.showHomePage){
+        if(this.state.signedIn && this.state.showHomePage){
             return (
                 <div>
-                    <form>
-                        hello from the home page
+                    <form onSubmit={this.onSubmit}>
+                    <label>Username:</label>
+                    <input 
+                        type="text" 
+                        value={this.state.username} 
+                        onChange={this.handleChange}
+                    ></input>
+                    <button className="loginButton" type="submit">Login</button>                
                     
                     </form>
                     
