@@ -1,4 +1,6 @@
-.pics {
-    text-align: center;
+td img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
 }
