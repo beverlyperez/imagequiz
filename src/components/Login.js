@@ -1,7 +1,6 @@
 import React from 'react';
 import HomePage from './HomePage';
 import './homePage.css';
-import cherryblossom from './images/cherryblossom.png';
 class Login extends React.Component {
     constructor(props){
         super(props);
@@ -57,7 +56,7 @@ class Login extends React.Component {
             <div>
                 <p>Welcome</p>
                 <p className="user">{this.state.username}</p>  
-                <img title="Cherry Blossom" src={cherryblossom} alt = "cherry" height={50} width={50}/>
+                <Homepage />
             </div>
 
         );
