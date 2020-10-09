@@ -57,7 +57,7 @@ class Login extends React.Component {
             <div>
                 <p>Welcome</p>
                 <p className="user">{this.state.username}</p>  
-                <img src={cherryblossom} alt = "cherry" height={50} width={50} text="cherry blossom">cherry blossom</img>
+                <img src={cherryblossom} alt = "cherry" height={50} width={50}>cherry blossom</img>
             </div>
 
         );
