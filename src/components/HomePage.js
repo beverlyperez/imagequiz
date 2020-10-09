@@ -16,16 +16,15 @@ class HomePage extends React.Component {
         return (
             
             <div className="home">
-                <p>help mee tho</p>
-                <table>
-                    <tr>
+                <table className="pics">
+                    <tr className="row1">
                         <td><img src={cherryblossom} alt = "cherry" height={100} width={100} />Cherry Blossom</td>
                         <td><img src={daffodil} alt = "daffodil" height={100} width={100} /> Daffodil </td>
                         <td><img src={daisy} alt = "daisy" height={100} width={100}/> Daisy </td>
                         <td><img src={lily} alt = "lily" height={100} width={100} /> Lily </td>
                         
                     </tr>
-                    <tr>
+                    <tr className="row2">
                         <td><img src={rose} alt = "rose" height={100} width={100} /> Rose </td>
                         <td><img src={sunflower} alt = "sunflower" height={100} width={100} /> Sunflower </td>
                         <td><img src={tulip} alt = "tulip" height={100} width={100} /> Tulip </td>
