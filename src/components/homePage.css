@@ -10,6 +10,7 @@ p{
 td {
     text-align: center;
     padding: 20px;
+    font-size: 20px;
 }
 
 .home{
@@ -19,4 +20,10 @@ td {
 
 .greeting{
     font-size: 40px;
+    padding: 20px;
+}
+
+.onlyform{
+    font-size: 50px;
+    
 }
