@@ -27,7 +27,7 @@ class Login extends React.Component {
     }
 
     render(){
-        if(this.state.signedIn && this.state.showHomePage){
+        if((!this.state.signedIn) && this.state.showHomePage){
             return (
                 <div>
                     <form onSubmit={this.onSubmit}>
