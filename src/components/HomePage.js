@@ -167,7 +167,7 @@ class HomePage extends React.Component {
                 </div>  
             );
         }
-        if(this.state.results && this.state.quizVideoG){
+        else if(this.state.results && this.state.quizVideoG){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1><br></br>
@@ -179,7 +179,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.results && this.state.quizCnCart){
+        else if(this.state.results && this.state.quizCnCart){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1><br></br>
@@ -191,7 +191,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.results && this.state.quizHall){
+        else if(this.state.results && this.state.quizHall){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1><br></br>
@@ -203,7 +203,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.quizCnCart){
+        else if(this.state.quizCnCart){
             return (
                 <div className="CNQ">
                     <h1>Which cartoon show from Cartoon Network, does the picture show?</h1>
