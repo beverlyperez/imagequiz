@@ -13,8 +13,6 @@ import videoGames from './images/VIDEOG.png';
 import cn from './images/CN.jpg';
 import hallow from './images/ZOMBIE.jpg';
 
-import quizcn from './quizCN';
-
 //Halloween
 import witch from './images/WITCH.jpg';
 import skull from './images/SKULL.jpg';
@@ -85,7 +83,8 @@ class HomePage extends React.Component {
             }
             
         }
-        
+        this.state.amountCorrect = amountCorrect;
+        this.setState({results: true});
         event.preventDefault();
         
     }
@@ -343,7 +342,7 @@ class HomePage extends React.Component {
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> /6</p>
+                    <p> {this.state.amountCorrect}/6</p>
                     <button className="returnHome" type="">Go Home</button><br></br>
                     <button className="TryAgain" type="">Try Again</button><br></br>
                     
