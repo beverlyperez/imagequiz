@@ -1,27 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "349068158e329dfe183a16e7d0868890",
+    "revision": "8d83dbb59107259aecaa21b93febf602",
     "url": "/imagequiz/index.html"
   },
   {
-    "revision": "1741d8a8984da006f5b7",
+    "revision": "7bd60470294033c1ebac",
     "url": "/imagequiz/static/css/main.8b43e20d.chunk.css"
   },
   {
-    "revision": "7b818ad7641bf08d79e2",
-    "url": "/imagequiz/static/js/2.eca653f9.chunk.js"
+    "revision": "04aea261b119f055b91d",
+    "url": "/imagequiz/static/js/2.11e174b2.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/imagequiz/static/js/2.eca653f9.chunk.js.LICENSE.txt"
+    "url": "/imagequiz/static/js/2.11e174b2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1741d8a8984da006f5b7",
-    "url": "/imagequiz/static/js/main.207e343b.chunk.js"
+    "revision": "7bd60470294033c1ebac",
+    "url": "/imagequiz/static/js/main.518b3a7f.chunk.js"
   },
   {
     "revision": "85da51fa7abe07fb0938",
     "url": "/imagequiz/static/js/runtime-main.2f3f5ace.js"
+  },
+  {
+    "revision": "592cfedafbfa63bd4b98c116e9051dfa",
+    "url": "/imagequiz/static/media/CN.592cfeda.jpg"
+  },
+  {
+    "revision": "e80abdd6e7924f4cb457f94c5ea4ebae",
+    "url": "/imagequiz/static/media/VIDEOG.e80abdd6.png"
+  },
+  {
+    "revision": "947a7d0e3ae80974955e4e96643e57e3",
+    "url": "/imagequiz/static/media/ZOMBIE.947a7d0e.jpg"
   },
   {
     "revision": "b610ae10f73384b410deb8af2309de86",
