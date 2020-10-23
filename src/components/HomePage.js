@@ -113,40 +113,64 @@ class HomePage extends React.Component {
                     <form id="quiz" onSubmit={this.onSubmit}>
                         
                         <img src={knd} alt = "kids" height={150} width={200} />
-                        <input id="answer" type="radio" name="q1" value="wrong"> Billy and Mandy</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="correct"> Codename: Kids Next Door</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="wrong"> Power Puff Girls</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="wrong"> Drake and Josh</input><br></br>
+                        <input id="a1" type="radio" name="q1" value="wrong"/>
+                        <label for="a1">Billy and Mandy</label><br></br>
+                        <input id="a2" type="radio" name="q1" value="correct"/>
+                        <label for="a2">Codename: Kids Next Door</label><br></br>
+                        <input id="a3" type="radio" name="q1" value="wrong"/>
+                        <label for="a3">Power Puff Girls</label><br></br>
+                        <input id="a4" type="radio" name="q1" value="wrong"/>
+                        <label for="a4">Drake and Josh</label><br></br>
 
                         <img src={power} alt = "power" height={150} width={200} />
-                        <input id="answer" type="radio" name="q2" value="wrong"> The Heroes of Townsville</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="wrong"> Supers</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="wrong"> Patrick</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="correct">Power Puff Girls</input><br></br>
+                        <input id="a5" type="radio" name="q2" value="wrong"/> 
+                        <label for="a5">The Heroes of Townsville</label><br></br>
+                        <input id="a6" type="radio" name="q2" value="wrong"/>
+                        <label for="a6">Supers</label><br></br>
+                        <input id="a7" type="radio" name="q2" value="wrong"/>
+                        <label for="a7">Patrick</label><br></br>
+                        <input id="a8" type="radio" name="q2" value="correct"/>
+                        <label for="a8">Power Puff Girls</label><br></br>
 
                         <img src={billy} alt = "bnm" height={150} width={200} />
-                        <input id="answer" type="radio" name="q3" value="correct">Grim Adventures of Billy and Mandy</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> Family Guy</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> Amanda Show</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> Shiny Teeth</input><br></br>
+                        <input id="a9" type="radio" name="q3" value="correct"/>
+                        <label for="a9">Grim Adventures of Billy and Mandy</label><br></br>
+                        <input id="a10" type="radio" name="q3" value="wrong"/>
+                        <label for="a10"> Family Guy</label><br></br>
+                        <input id="a11" type="radio" name="q3" value="wrong"/>
+                        <label for="a11">Amanda Show</label><br></br>
+                        <input id="a12" type="radio" name="q3" value="wrong"/>
+                        <label for="a12">Shiny Teeth</label><br></br>
 
                         <img src={cour} alt = "ccds" height={150} width={200} />
-                        <input id="answer" type="radio" name="q4" value="wrong"> Puppy</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="wrong"> Purple Dog</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="correct"> Courage the Cowardly Dog</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="wrong"> Nickelodeon</input><br></br>
+                        <input id="a13" type="radio" name="q4" value="wrong"/> 
+                        <label for="a13">Puppy</label><br></br>
+                        <input id="a14" type="radio" name="q4" value="wrong"/>
+                        <label for="a14">Purple Dog</label><br></br>
+                        <input id="a15" type="radio" name="q4" value="correct"/>
+                        <label for="a15">Courage the Cowardly Dog</label><br></br>
+                        <input id="a16" type="radio" name="q4" value="wrong"/> 
+                        <label for="a16">Nickelodeon</label><br></br>
 
                         <img src={eee} alt = "eds" height={150} width={200} />
-                        <input id="answer" type="radio" name="q5" value="wrong"> Spongebob</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="wrong"> Cat Dog</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="wrong"> Hey Arnold!</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="correct"> Ed, Edd, and Eddy</input><br></br>
+                        <input id="a17" type="radio" name="q5" value="wrong"/> 
+                        <label for="a17">Spongebob</label><br></br>
+                        <input id="a18" type="radio" name="q5" value="wrong"/> 
+                        <label for="a18">Cat Dog</label><br></br>
+                        <input id="a19" type="radio" name="q5" value="wrong"/> 
+                        <label for="a19">Hey Arnold!</label><br></br>
+                        <input id="a20" type="radio" name="q5" value="correct"/> 
+                        <label for="a20">Ed, Edd, and Eddy</label><br></br>
 
                         <img src={dl} alt = "dext" height={150} width={200} />
-                        <input id="answer" type="radio" name="q6" value="wrong"> Scientists</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="correct"> Dexters Laboratory</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="wrong"> Power Puff Girls</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="wrong"> Battle Stations</input><br></br>
+                        <input id="a21" type="radio" name="q6" value="wrong"/> 
+                        <label for="a21">Scientists</label><br></br>
+                        <input id="a22" type="radio" name="q6" value="correct"/> 
+                        <label for="a22">Dexters Laboratory</label><br></br>
+                        <input id="a23" type="radio" name="q6" value="wrong"/> 
+                        <label for="a23">Power Puff Girls</label><br></br>
+                        <input id="a24" type="radio" name="q6" value="wrong"/>
+                        <label for="a24">Battle Stations</label><br></br>
 
                         <button className="subButton" type="submit">Submit</button>                
 
@@ -161,41 +185,64 @@ class HomePage extends React.Component {
                     <form id="quiz" onSubmit={this.onSubmit}>
                         
                         <img src={witch} alt = "witch" height={150} width={200} />
-                        <input id="answer" type="radio" name="q1" value="wrong"> Woman</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="correct"> Witch</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="wrong"> Troll</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="wrong"> Strangers in the night</input><br></br>
-
+                        <input id="answer" type="radio" name="q1" value="wrong"/> 
+                        <label for="a1">Woman</label><br></br>
+                        <input id="a2" type="radio" name="q1" value="correct"/> 
+                        <label for="a2">Witch</label><br></br>
+						<input id="a3" type="radio" name="q1" value="wrong"/> 
+                        <label for="a3">Troll</label><br></br>
+						<input id="a4" type="radio" name="q1" value="wrong"/> 
+						<label for="a4">Strangers in the night</label><br></br>
+						
                         <img src={ghost} alt = "ghost" height={150} width={200} />
-                        <input id="answer" type="radio" name="q2" value="wrong"> Bed sheet</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="wrong"> Human</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="wrong"> Spider</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="correct"> Ghost</input><br></br>
+                        <input id="a5" type="radio" name="q2" value="wrong"/> 
+                        <label for="a5">Bed sheet</label><br></br>
+						<input id="a6" type="radio" name="q2" value="wrong"/> 
+                        <label for="a6">Human</label><br></br>
+						<input id="a7" type="radio" name="q2" value="wrong"/> 
+                        <label for="a7">Spider</label><br></br>
+						<input id="a8" type="radio" name="q2" value="correct"/> 
+						<label for="a8">Ghost</label><br></br>
 
                         <img src={spider} alt = "spider" height={150} width={200} />
-                        <input id="answer" type="radio" name="q3" value="correct"> Spider</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> Chocho (bug)</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> CuCuy (monster)</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> Fly</input><br></br>
-
+                        <input id="a9" type="radio" name="q3" value="correct"/> 
+                        <label for="a9">Spider</label><br></br>
+						<input id="a10" type="radio" name="q3" value="wrong"/> 
+                        <label for="a10">Chocho (bug)</label><br></br>
+						<input id="a11" type="radio" name="q3" value="wrong"/>
+                        <label for="a11"> CuCuy (monster)</label><br></br>
+						<input id="a12" type="radio" name="q3" value="wrong"/> 
+						<label for="a12">Fly</label><br></br>
+						
                         <img src={jack} alt = "jack" height={150} width={200} />
-                        <input id="answer" type="radio" name="q4" value="wrong"> Orange</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="wrong"> Spider Web</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="correct"> Jackolantern</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="wrong"> Helper</input><br></br>
+                        <input id="a13" type="radio" name="q4" value="wrong"/> 
+                        <label for="a13">Orange</label><br></br>
+						<input id="a14" type="radio" name="q4" value="wrong"/> 
+                        <label for="a14">Spider Web</label><br></br>
+						<input id="a15" type="radio" name="q4" value="correct"/> 
+                        <label for="a15">Jackolantern</label><br></br>
+						<input id="a16" type="radio" name="q4" value="wrong"/> 
+						<label for="a16">Helper</label><br></br>
 
                         <img src={fkstn} alt = "fkstn" height={150} width={200} />
-                        <input id="answer" type="radio" name="q5" value="wrong"> Dead guy</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="wrong"> Yolanda</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="wrong"> Neighbor</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="correct"> Frankenstein</input><br></br>
-
+                        <input id="a17" type="radio" name="q5" value="wrong"/> 
+                        <label for="a17">Dead guy</label><br></br>
+						<input id="a18" type="radio" name="q5" value="wrong"/> 
+                        <label for="a18">Yolanda</label><br></br>
+						<input id="a19" type="radio" name="q5" value="wrong"/> 
+                        <label for="a19">Neighbor</label><br></br>
+						<input id="a20" type="radio" name="q5" value="correct"/> 
+						<label for="a20">Frankenstein</label><br></br>
+						
                         <img src={skull} alt = "skull" height={150} width={200} />
-                        <input id="answer" type="radio" name="q6" value="wrong"> White</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="correct"> Skull</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="wrong"> Ghost</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="wrong"> Warrior</input><br></br>
-
+                        <input id="a21" type="radio" name="q6" value="wrong"/> 
+                        <label for="a21">White</label><br></br>
+						<input id="a22" type="radio" name="q6" value="correct"/> 
+                        <label for="a22">Skull</label><br></br>
+						<input id="a23" type="radio" name="q6" value="wrong"/> 
+                        <label for="a23">Ghost</label><br></br>
+						<input id="a24" type="radio" name="q6" value="wrong"/> 
+						<label for="a24">Warrior</label><br></br>
                         <button className="subButton" type="submit">Submit</button>                
 
                     </form>
@@ -209,40 +256,64 @@ class HomePage extends React.Component {
                     <form id="quiz" onSubmit={this.onSubmit}>
                         
                         <img src={unc} alt = "unc" height={150} width={200} />
-                        <input id="answer" type="radio" name="q1" value="wrong"> Farcry</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="correct"> Uncharted</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="wrong"> Devil in Disguise</input><br></br>
-                        <input id="answer" type="radio" name="q1" value="wrong"> Unbelievable</input><br></br>
-
+                        <input id="a1" type="radio" name="q1" value="wrong"/> 
+						<label for="a1">Farcry</label><br></br>
+						<input id="a2" type="radio" name="q1" value="correct"/> 
+                        <label for="a2">Uncharted</label><br></br>
+						<input id="a3" type="radio" name="q1" value="wrong"/> 
+                        <label for="a3">Devil in Disguise</label><br></br>
+						<input id="a4" type="radio" name="q1" value="wrong"/> 
+						<label for="a4">Unbelievable</label><br></br>
+						
                         <img src={sly} alt = "sly" height={150} width={200} />
-                        <input id="answer" type="radio" name="q2" value="wrong"> Racoon Adventures</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="wrong"> Spy Intruders</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="wrong"> Patrick the Hippo</input><br></br>
-                        <input id="answer" type="radio" name="q2" value="correct"> Sly Cooper</input><br></br>
-
+                        <input id="a5" type="radio" name="q2" value="wrong"/> 
+                        <label for="a5">Racoon Adventures</label><br></br>
+						<input id="a6" type="radio" name="q2" value="wrong"/> 
+                        <label for="a6">Spy Intruders</label><br></br>
+						<input id="a7" type="radio" name="q2" value="wrong"/> 
+                        <label for="a7">Patrick the Hippo</label><br></br>
+						<input id="a8" type="radio" name="q2" value="correct"/> 
+						<label for="a8">Sly Cooper</label><br></br>
+						
                         <img src={bios} alt = "bios" height={150} width={200} />
-                        <input id="answer" type="radio" name="q3" value="correct"> Bioshock</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> The Handy Man</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> Dont do Drugs!</input><br></br>
-                        <input id="answer" type="radio" name="q3" value="wrong"> Zombies</input><br></br>
-
+                        <input id="a9" type="radio" name="q3" value="correct"/> 
+                        <label for="a9">Bioshock</label><br></br>
+						<input id="a10" type="radio" name="q3" value="wrong"/> 
+                        <label for="a10">The Handy Man</label><br></br>
+						<input id="a11" type="radio" name="q3" value="wrong"/> 
+                        <label for="a11">Dont do Drugs!</label><br></br>
+						<input id="a12" type="radio" name="q3" value="wrong"/> 
+						<label for="a12">Zombies</label><br></br>
+						
                         <img src={king} alt = "king" height={150} width={200} />
-                        <input id="answer" type="radio" name="q4" value="wrong"> Help Wanted</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="wrong"> Nathan Drake</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="correct"> Kingdom Hearts</input><br></br>
-                        <input id="answer" type="radio" name="q4" value="wrong"> Disney</input><br></br>
-
+                        <input id="a13" type="radio" name="q4" value="wrong"/> 
+                        <label for="a13">Help Wanted</label><br></br>
+						<input id="a114" type="radio" name="q4" value="wrong"/> 
+                        <label for="a114">Nathan Drake</label><br></br>
+						<input id="a15" type="radio" name="q4" value="correct"/> 
+                        <label for="a15">Kingdom Hearts</label><br></br>
+						<input id="a16" type="radio" name="q4" value="wrong"/> 
+						<label for="a16">Disney</label><br></br>
+						
                         <img src={spyro} alt = "spy" height={150} width={200} />
-                        <input id="answer" type="radio" name="q5" value="wrong"> Naughty Dog</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="wrong"> Dragon</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="wrong"> The Future</input><br></br>
-                        <input id="answer" type="radio" name="q5" value="correct"> Spyro</input><br></br>
-
+                        <input id="a17" type="radio" name="q5" value="wrong"/>
+                        <label for="a17"> Naughty Dog</label><br></br>
+						<input id="a18" type="radio" name="q5" value="wrong"/> 
+                        <label for="a18">Dragon</label><br></br>
+						<input id="a19" type="radio" name="q5" value="wrong"/> 
+                        <label for="a19">The Future</label><br></br>
+						<input id="a20" type="radio" name="q5" value="correct"/> 
+						<label for="a20">Spyro</label><br></br>
+						
                         <img src={jackn} alt = "jack" height={150} width={200} />
-                        <input id="answer" type="radio" name="q6" value="wrong"> The Legacy</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="correct"> Jack and Daxter</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="wrong"> Crash Bash</input><br></br>
-                        <input id="answer" type="radio" name="q6" value="wrong"> Bandicoot</input><br></br>
+                        <input id="a21" type="radio" name="q6" value="wrong"/> 
+                        <label for="a21">The Legacy</label><br></br>
+						<input id="a22" type="radio" name="q6" value="correct"/> 
+                        <label for="a22">Jack and Daxter</label><br></br>
+						<input id="a23" type="radio" name="q6" value="wrong"/> 
+                        <label for="a23">Crash Bash</label><br></br>
+						<input id="a24" type="radio" name="q6" value="wrong"/> 
+						<label for="a24">Bandicoot</label><br></br>
 
                         <button className="subButton" type="submit">Submit</button>                
 
