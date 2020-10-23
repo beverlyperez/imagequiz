@@ -45,7 +45,7 @@ class HomePage extends React.Component {
             quizVideoG: false, 
             results: false,
             amountCorrect: 0
-        };
+\        };
 
     }
 
@@ -76,29 +76,15 @@ class HomePage extends React.Component {
         this.setState({quizHall: false});
         this.setState({quizVideoG: false});
         this.setState({results: false});
+        this.setState({currentlyOn: ""});
         event.preventDefault();
     }
 
-    restartCnCart = (event) => {
+    restartCnCart = () => {
         
         this.setState({results: false});
-        this.setState({quizCnCart: true});
+        this.setState({quizCnCart: false});
 
-        event.preventDefault();
-    }
-    restartVideoG = (event) => {
-        
-        this.setState({results: false});
-        this.setState({quizVideoG: true});
-
-        event.preventDefault();
-    }
-    restartHall = (event) => {
-        
-        this.setState({results: false});
-        this.setState({quizHall: true});
-
-        event.preventDefault();
     }
     
     onSubmit = (currentState) => {
@@ -114,16 +100,10 @@ class HomePage extends React.Component {
             
         }
         this.state.amountCorrect = amountCorrect;
-        console.log(this.state.amountCorrect + "this is the amount correct")
+        console.log(this.state.amountCorrect + "this is the amount correct");
         this.setState({results: true});
         if(currentState == "cartoons"){
-            this.setState({quizCnCart: false});
-        }
-        else if(currentState == "videog"){
-            this.setState({quizVideoG: false});
-        }
-        else if(currentState == "halloween"){
-            this.setState({quizHall: false});
+            this.state.quizCnCart
         }
     }
 
@@ -165,7 +145,7 @@ class HomePage extends React.Component {
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}</p>
+                    <p> {this.state.amountCorrect}/6</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
                     
@@ -176,8 +156,7 @@ class HomePage extends React.Component {
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}</p>
-                    <p></p>
+                    <p> {this.state.amountCorrect}/6</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
                     
@@ -188,7 +167,7 @@ class HomePage extends React.Component {
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}</p>
+                    <p> {this.state.amountCorrect}/6</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
                     
