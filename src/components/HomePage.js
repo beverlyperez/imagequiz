@@ -9,6 +9,10 @@ import sunflower from './images/sunflower.png';
 import tulip from './images/tulip.png';
 import waterlily from './images/waterlily.png';
 
+import videoGames from './images/VIDEOG.png';
+import cn from './images/CN.jpg';
+import hallow from './images/ZOMBIE.jpg';
+
 class HomePage extends React.Component {
 
     render(){
@@ -31,7 +35,15 @@ class HomePage extends React.Component {
                         <td><img src={waterlily} alt = "waterlily" height={150} width={150} /> WaterLily </td>
                         
                     </tr>
-                </table>   
+                </table><br></br>
+                <p>Quizes to take:</p>  
+                    <table className="pics">
+                        <tr className="row1">
+                            <td><img src={videoGames} alt = "vg" height={150} width={150} /> Video Games </td>
+                            <td><img src={hallow} alt = "hw" height={150} width={150} /> Halloween </td>
+                            <td><img src={cn} alt = "cn" height={150} width={150}/> Cartoon Network Cartoons </td>                        
+                        </tr>
+                    </table>
             </div>  
         );
     }
