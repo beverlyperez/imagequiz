@@ -115,7 +115,7 @@ class HomePage extends React.Component {
             
         }
         this.setState({amountCorrect: amountCorrect});
-        console.log(this.state.amountCorrect + "this is the amount correct")
+        console.log(this.state.amountCorrect + " this is the amount correct")
         this.setState({results: true});
         if(currentState == "cartoons"){
             this.setState({quizCnCart: false});
@@ -162,42 +162,7 @@ class HomePage extends React.Component {
                 </div>  
             );
         }
-        if(this.state.results && this.state.quizVideoG){
-            return(
-                <div className="Results">
-                    <h1>Your results are: </h1>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-                    <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
-                    
-                </div>
-            );
-        }
-        if(this.state.results && this.state.quizCnCart){
-            return(
-                <div className="Results">
-                    <h1>Your results are: </h1>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-                    <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
-                    
-                </div>
-            );
-        }
-        if(this.state.results && this.state.quizHall){
-            return(
-                <div className="Results">
-                    <h1>Your results are: </h1>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-                    <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
-                    
-                </div>
-            );
-        }
+        
         if(this.state.quizCnCart){
             return (
                 <div className="CNQ">
