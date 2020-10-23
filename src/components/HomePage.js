@@ -45,7 +45,8 @@ class HomePage extends React.Component {
             quizCnCart: false,
             quizHall: false,
             quizVideoG: false, 
-            results: false
+            results: false,
+            amountCorrect: 0
         };
 
     }
@@ -70,6 +71,23 @@ class HomePage extends React.Component {
         }
         event.preventDefault();
     
+    }
+
+    onSubmit = (event) => {
+        var amountCorrect = 0;          
+        for(var i = 1; i <= 6; i++) {
+            var radios = document.getElementsByName('q'+i);
+            for(var j = 0; j < radios.length; j++) {
+                var radio = radios[j];
+                if(radio.value == "correct" && radio.checked) {
+                amountCorrect++;
+                }
+            }
+            
+        }
+        
+        event.preventDefault();
+        
     }
 
     render(){
