@@ -45,7 +45,7 @@ class HomePage extends React.Component {
             quizVideoG: false, 
             results: false,
             amountCorrect: 0
-\        };
+        };
 
     }
 
