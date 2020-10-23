@@ -76,6 +76,7 @@ class HomePage extends React.Component {
         this.setState({quizHall: false});
         this.setState({quizVideoG: false});
         this.setState({results: false});
+        this.setState({amountCorrect: 0});
         event.preventDefault();
     }
 
@@ -113,7 +114,7 @@ class HomePage extends React.Component {
             }
             
         }
-        this.state.amountCorrect = amountCorrect;
+        this.setState({amountCorrect: amountCorrect});
         console.log(this.state.amountCorrect + "this is the amount correct")
         this.setState({results: true});
         if(currentState == "cartoons"){
@@ -165,7 +166,8 @@ class HomePage extends React.Component {
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}/6</p>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>Out of 6 correct</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
                     
@@ -176,7 +178,8 @@ class HomePage extends React.Component {
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}/6</p>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>Out of 6 correct</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
                     
@@ -187,7 +190,8 @@ class HomePage extends React.Component {
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}/6</p>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>Out of 6 correct</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
                     
