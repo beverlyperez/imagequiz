@@ -102,9 +102,7 @@ class HomePage extends React.Component {
         this.state.amountCorrect = amountCorrect;
         console.log(this.state.amountCorrect + "this is the amount correct");
         this.setState({results: true});
-        if(currentState == "cartoons"){
-            this.state.quizCnCart
-        }
+        
     }
 
     render(){
