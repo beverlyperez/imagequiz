@@ -39,9 +39,9 @@ class HomePage extends React.Component {
                 <p>Quizes to take:</p>  
                     <table className="pics">
                         <tr className="row1">
-                            <td><img src={videoGames} alt = "vg" height={150} width={150} /> Video Games </td>
-                            <td><img src={hallow} alt = "hw" height={150} width={150} /> Halloween </td>
-                            <td><img src={cn} alt = "cn" height={150} width={150}/> Cartoon Network Cartoons </td>                        
+                            <td><img src={videoGames} alt = "vg" height={150} width={300} /> Video Games </td>
+                            <td><img src={hallow} alt = "hw" height={150} width={300} /> Halloween </td>
+                            <td><img src={cn} alt = "cn" height={150} width={300}/> Cartoon Network Cartoons </td>                        
                         </tr>
                     </table>
             </div>  
