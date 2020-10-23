@@ -36,6 +36,7 @@ import billy from './images/BM.jpg';
 import cour from './images/CCD.png';
 import eee from './images/EEE.jpg';
 import dl from './images/DL.jpg';
+
 class HomePage extends React.Component {
     constructor(props){
         super(props);
@@ -56,6 +57,7 @@ class HomePage extends React.Component {
         event.preventDefault();
     
     }
+
     activateStateH = (event) => {
         if(!this.state.quizHall){
             this.setState({quizHall: true});
@@ -63,6 +65,7 @@ class HomePage extends React.Component {
         event.preventDefault();
     
     }
+    
     activateStateC = (event) => {
         if(!this.state.quizCnCart){
             this.setState({quizCnCart: true});
@@ -272,7 +275,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.quizHall){
+        else if(this.state.quizHall){
             return (
                 <div className="HALL">
                     <h1>What is the name of this halloween item?</h1>
@@ -343,7 +346,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.quizVideoG){
+        else if(this.state.quizVideoG){
             return (
                 <div className="VG">
                     <h1>From which video game is the picture from?</h1>
@@ -422,7 +425,3 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
-
-
-
-
