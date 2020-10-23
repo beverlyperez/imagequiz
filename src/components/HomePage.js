@@ -66,21 +66,19 @@ class HomePage extends React.Component {
     
     }
     
-    activateStateC = (event) => {
+    activateStateC = () => {
         if(!this.state.quizCnCart){
             this.setState({quizCnCart: true});
         }
-        event.preventDefault();
     
     }
 
-    EmptyAll = (event) => {
+    EmptyAll = () => {
         this.setState({quizCnCart: false});
         this.setState({quizHall: false});
         this.setState({quizVideoG: false});
         this.setState({results: false});
         this.setState({amountC: 0});
-        event.preventDefault();
     }
 
     restartCnCart = () => {
