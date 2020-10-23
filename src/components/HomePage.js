@@ -50,19 +50,17 @@ class HomePage extends React.Component {
 
     }
 
-    activateStateV = (event) => {
+    activateStateV = () => {
         if(!this.state.quizVideoG){
             this.setState({quizVideoG: true});
         }
-        event.preventDefault();
     
     }
 
-    activateStateH = (event) => {
+    activateStateH = () => {
         if(!this.state.quizHall){
             this.setState({quizHall: true});
         }
-        event.preventDefault();
     
     }
     
@@ -114,7 +112,6 @@ class HomePage extends React.Component {
             
         }
         this.setState({amountC: amountCorrect});
-        console.log(this.state.amountCorrect + " this is the amount correct");
         this.setState({results: true});
         if(currentState == "cartoons"){
             this.setState({quizCnCart: false});
