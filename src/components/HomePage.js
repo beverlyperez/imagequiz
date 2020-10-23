@@ -44,9 +44,8 @@ class HomePage extends React.Component {
             quizHall: false,
             quizVideoG: false, 
             results: false,
-            amountCorrect: 0,
-            currentlyOn: ""
-        };
+            amountCorrect: 0
+\        };
 
     }
 
@@ -77,14 +76,28 @@ class HomePage extends React.Component {
         this.setState({quizHall: false});
         this.setState({quizVideoG: false});
         this.setState({results: false});
-        this.setState({currentlyOn: ""});
         event.preventDefault();
     }
 
-    restart = (event) => {
+    restartCnCart = (event) => {
         
         this.setState({results: false});
-        this.setState({currentlyOn: true});
+        this.setState({quizCnCart: true});
+
+        event.preventDefault();
+    }
+    restartVideoG = (event) => {
+        
+        this.setState({results: false});
+        this.setState({quizVideoG: true});
+
+        event.preventDefault();
+    }
+    restartHall = (event) => {
+        
+        this.setState({results: false});
+        this.setState({quizHall: true});
+
         event.preventDefault();
     }
     
@@ -103,7 +116,15 @@ class HomePage extends React.Component {
         this.state.amountCorrect = amountCorrect;
         console.log(this.state.amountCorrect + "this is the amount correct")
         this.setState({results: true});
-        this.state.currentlyOn = currentState;        
+        if(currentState == "cartoons"){
+            this.setState({quizCnCart: false});
+        }
+        else if(currentState == "videog"){
+            this.setState({quizVideoG: false});
+        }
+        else if(currentState == "halloween"){
+            this.setState({quizHall: false});
+        }
     }
 
     render(){
@@ -140,11 +161,44 @@ class HomePage extends React.Component {
                 </div>  
             );
         }
+        if(this.state.results && this.state.quizVideoG){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1>
+                    <p> {this.state.amountCorrect}/6</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
+                    <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
+        if(this.state.results && this.state.quizCnCart){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1>
+                    <p> {this.state.amountCorrect}/6</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
+                    <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
+        if(this.state.results && this.state.quizHall){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1>
+                    <p> {this.state.amountCorrect}/6</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
+                    <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
         if(this.state.quizCnCart){
             return (
                 <div className="CNQ">
                     <h1>Which cartoon show from Cartoon Network, does the picture show?</h1>
-                    <form id="quiz" onSubmit={this.onSubmit(this.state.quizCnCart)}>
+                    <form id="quiz" onSubmit={this.onSubmit("cartoons")}>
                         
                         <img src={knd} alt = "kids" height={150} width={200} /><br></br>
                         <input id="a1" type="radio" name="q1" value="wrong"/>
@@ -216,7 +270,7 @@ class HomePage extends React.Component {
             return (
                 <div className="HALL">
                     <h1>What is the name of this halloween item?</h1>
-                    <form id="quiz" onSubmit={this.onSubmit}>
+                    <form id="quiz" onSubmit={this.onSubmit("halloween")}>
                         
                         <img src={witch} alt = "witch" height={150} width={200} /><br></br>
                         <input id="answer" type="radio" name="q1" value="wrong"/> 
@@ -287,7 +341,7 @@ class HomePage extends React.Component {
             return (
                 <div className="VG">
                     <h1>From which video game is the picture from?</h1>
-                    <form id="quiz" onSubmit={this.onSubmit}>
+                    <form id="quiz" onSubmit={this.onSubmit("videog")}>
                         
                         <img src={unc} alt = "unc" height={150} width={200} /><br></br>
                         <input id="a1" type="radio" name="q1" value="wrong"/> 
@@ -355,17 +409,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.results){
-            return(
-                <div className="Results">
-                    <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}/6</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-                    <button className="TryAgain" onClick={this.restart}>Try Again</button><br></br>
-                    
-                </div>
-            );
-        }
+        
 
     }
 
