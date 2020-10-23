@@ -76,15 +76,32 @@ class HomePage extends React.Component {
         this.setState({quizHall: false});
         this.setState({quizVideoG: false});
         this.setState({results: false});
-        this.setState({currentlyOn: ""});
+        this.setState({amountC: 0});
         event.preventDefault();
     }
 
-    restartCnCart = () => {
+    restartCnCart = (event) => {
         
         this.setState({results: false});
-        this.setState({quizCnCart: false});
+        this.setState({quizCnCart: true});
 
+        event.preventDefault();
+    }
+
+    restartVideoG = (event) => {
+        
+        this.setState({results: false});
+        this.setState({quizVideoG: true});
+
+        event.preventDefault();
+    }
+
+    restartHall = (event) => {
+        
+        this.setState({results: false});
+        this.setState({quizHall: true});
+
+        event.preventDefault();
     }
     
     onSubmit = (currentState) => {
@@ -94,15 +111,23 @@ class HomePage extends React.Component {
             for(var j = 0; j < radios.length; j++) {
                 var radio = radios[j];
                 if(radio.value == "correct" && radio.checked) {
-                amountCorrect++;
+                    amountCorrect++;
                 }
             }
             
         }
-        this.state.amountCorrect = amountCorrect;
-        console.log(this.state.amountCorrect + "this is the amount correct");
+        this.setState({amountC: amountCorrect});
+        console.log(this.state.amountCorrect + " this is the amount correct");
         this.setState({results: true});
-        
+        if(currentState == "cartoons"){
+            this.setState({quizCnCart: false});
+        }
+        else if(currentState == "videog"){
+            this.setState({quizVideoG: false});
+        }
+        else if(currentState == "halloween"){
+            this.setState({quizHall: false});
+        }
     }
 
     render(){
@@ -139,40 +164,43 @@ class HomePage extends React.Component {
                 </div>  
             );
         }
-        if(this.state.results && this.state.quizVideoG){
+        else if(this.state.results && this.state.quizVideoG){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}/6</p>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>Out of 6 correct</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
                     
                 </div>
             );
         }
-        if(this.state.results && this.state.quizCnCart){
+        else if(this.state.results && this.state.quizCnCart){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}/6</p>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>Out of 6 correct</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
                     
                 </div>
             );
         }
-        if(this.state.results && this.state.quizHall){
+        else if(this.state.results && this.state.quizHall){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1>
-                    <p> {this.state.amountCorrect}/6</p>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>Out of 6 correct</p>
                     <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
                     <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
                     
                 </div>
             );
         }
-        if(this.state.quizCnCart){
+        else if(this.state.quizCnCart){
             return (
                 <div className="CNQ">
                     <h1>Which cartoon show from Cartoon Network, does the picture show?</h1>
@@ -354,8 +382,8 @@ class HomePage extends React.Component {
                         <img src={king} alt = "king" height={150} width={200} /><br></br>
                         <input id="a13" type="radio" name="q4" value="wrong"/> 
                         <label for="a13">Help Wanted</label><br></br>
-						<input id="a114" type="radio" name="q4" value="wrong"/> 
-                        <label for="a114">Nathan Drake</label><br></br>
+						<input id="a14" type="radio" name="q4" value="wrong"/> 
+                        <label for="a14">Nathan Drake</label><br></br>
 						<input id="a15" type="radio" name="q4" value="correct"/> 
                         <label for="a15">Kingdom Hearts</label><br></br>
 						<input id="a16" type="radio" name="q4" value="wrong"/> 
@@ -394,3 +422,7 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
+
+
+
+
