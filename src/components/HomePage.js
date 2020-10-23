@@ -167,7 +167,7 @@ class HomePage extends React.Component {
                 </div>  
             );
         }
-        else if(this.state.results && this.state.quizVideoG){
+        if(this.state.results && this.state.quizVideoG){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1><br></br>
@@ -179,7 +179,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        else if(this.state.results && this.state.quizCnCart){
+        if(this.state.results && this.state.quizCnCart){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1><br></br>
@@ -191,7 +191,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        else if(this.state.results && this.state.quizHall){
+        if(this.state.results && this.state.quizHall){
             return(
                 <div className="Results">
                     <h1>Your results are: </h1><br></br>
