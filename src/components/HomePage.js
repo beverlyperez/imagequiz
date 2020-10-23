@@ -83,28 +83,24 @@ class HomePage extends React.Component {
         event.preventDefault();
     }
 
-    restartCnCart = (event) => {
+    restartCnCart = () => {
         
         this.setState({results: false});
         this.setState({quizCnCart: true});
-
-        event.preventDefault();
     }
 
-    restartVideoG = (event) => {
+    restartVideoG = () => {
         
         this.setState({results: false});
         this.setState({quizVideoG: true});
 
-        event.preventDefault();
     }
 
-    restartHall = (event) => {
+    restartHall = () => {
         
         this.setState({results: false});
         this.setState({quizHall: true});
 
-        event.preventDefault();
     }
     
     onSubmit = (currentState) => {
