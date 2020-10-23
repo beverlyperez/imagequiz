@@ -27,7 +27,7 @@ import fkstn from './images/FKSTN.jpg';
 import king from './images/KING.png';
 import spyro from './images/SPYRO.jpg';
 import bios from './images/BIOS.jpg';
-import jackn from './images/JACKND.jpg';
+import jackn from './images/JAKND.jpg';
 import sly from './images/SLY.jpg';
 import unc from './images/UNC.jpg';
 
