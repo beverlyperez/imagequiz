@@ -44,7 +44,8 @@ class HomePage extends React.Component {
             quizHall: false,
             quizVideoG: false, 
             results: false,
-            amountCorrect: 0
+            amountCorrect: 0,
+            currentlyOn: ""
         };
 
     }
@@ -71,7 +72,23 @@ class HomePage extends React.Component {
     
     }
 
-    onSubmit = (event) => {
+    EmptyAll = (event) => {
+        this.setState({quizCnCart: false});
+        this.setState({quizHall: false});
+        this.setState({quizVideoG: false});
+        this.setState({results: false});
+        this.setState({currentlyOn: ""});
+        event.preventDefault();
+    }
+
+    restart = (event) => {
+        
+        this.setState({results: false});
+        this.setState({currentlyOn: true});
+        event.preventDefault();
+    }
+    
+    onSubmit = (currentState) => {
         var amountCorrect = 0;          
         for(var i = 1; i <= 6; i++) {
             var radios = document.getElementsByName('q'+i);
@@ -84,9 +101,9 @@ class HomePage extends React.Component {
             
         }
         this.state.amountCorrect = amountCorrect;
+        console.log(this.state.amountCorrect + "this is the amount correct")
         this.setState({results: true});
-        event.preventDefault();
-        
+        this.state.currentlyOn = currentState;        
     }
 
     render(){
@@ -127,7 +144,7 @@ class HomePage extends React.Component {
             return (
                 <div className="CNQ">
                     <h1>Which cartoon show from Cartoon Network, does the picture show?</h1>
-                    <form id="quiz" onSubmit={this.onSubmit}>
+                    <form id="quiz" onSubmit={this.onSubmit(this.state.quizCnCart)}>
                         
                         <img src={knd} alt = "kids" height={150} width={200} /><br></br>
                         <input id="a1" type="radio" name="q1" value="wrong"/>
@@ -137,7 +154,7 @@ class HomePage extends React.Component {
                         <input id="a3" type="radio" name="q1" value="wrong"/>
                         <label for="a3">Power Puff Girls</label><br></br>
                         <input id="a4" type="radio" name="q1" value="wrong"/>
-                        <label for="a4">Drake and Josh</label><br></br><br></br>
+                        <label for="a4">Drake and Josh</label><br></br><br></br><br></br>
 
                         <img src={power} alt = "power" height={150} width={200} /><br></br>
                         <input id="a5" type="radio" name="q2" value="wrong"/> 
@@ -147,7 +164,7 @@ class HomePage extends React.Component {
                         <input id="a7" type="radio" name="q2" value="wrong"/>
                         <label for="a7">Patrick</label><br></br>
                         <input id="a8" type="radio" name="q2" value="correct"/>
-                        <label for="a8">Power Puff Girls</label><br></br><br></br>
+                        <label for="a8">Power Puff Girls</label><br></br><br></br><br></br>
 
                         <img src={billy} alt = "bnm" height={150} width={200} /><br></br>
                         <input id="a9" type="radio" name="q3" value="correct"/>
@@ -157,7 +174,7 @@ class HomePage extends React.Component {
                         <input id="a11" type="radio" name="q3" value="wrong"/>
                         <label for="a11">Amanda Show</label><br></br>
                         <input id="a12" type="radio" name="q3" value="wrong"/>
-                        <label for="a12">Shiny Teeth</label><br></br><br></br>
+                        <label for="a12">Shiny Teeth</label><br></br><br></br><br></br>
 
                         <img src={cour} alt = "ccds" height={150} width={200} /><br></br>
                         <input id="a13" type="radio" name="q4" value="wrong"/> 
@@ -167,7 +184,7 @@ class HomePage extends React.Component {
                         <input id="a15" type="radio" name="q4" value="correct"/>
                         <label for="a15">Courage the Cowardly Dog</label><br></br>
                         <input id="a16" type="radio" name="q4" value="wrong"/> 
-                        <label for="a16">Nickelodeon</label><br></br><br></br>
+                        <label for="a16">Nickelodeon</label><br></br><br></br><br></br>
 
                         <img src={eee} alt = "eds" height={150} width={200} /><br></br>
                         <input id="a17" type="radio" name="q5" value="wrong"/> 
@@ -177,7 +194,7 @@ class HomePage extends React.Component {
                         <input id="a19" type="radio" name="q5" value="wrong"/> 
                         <label for="a19">Hey Arnold!</label><br></br>
                         <input id="a20" type="radio" name="q5" value="correct"/> 
-                        <label for="a20">Ed, Edd, and Eddy</label><br></br><br></br>
+                        <label for="a20">Ed, Edd, and Eddy</label><br></br><br></br><br></br>
 
                         <img src={dl} alt = "dext" height={150} width={200} /><br></br>
                         <input id="a21" type="radio" name="q6" value="wrong"/> 
@@ -187,7 +204,7 @@ class HomePage extends React.Component {
                         <input id="a23" type="radio" name="q6" value="wrong"/> 
                         <label for="a23">Power Puff Girls</label><br></br>
                         <input id="a24" type="radio" name="q6" value="wrong"/>
-                        <label for="a24">Battle Stations</label><br></br><br></br>
+                        <label for="a24">Battle Stations</label><br></br><br></br><br></br>
 
                         <button className="subButton" type="submit">Submit</button>                
 
@@ -209,7 +226,7 @@ class HomePage extends React.Component {
 						<input id="a3" type="radio" name="q1" value="wrong"/> 
                         <label for="a3">Troll</label><br></br>
 						<input id="a4" type="radio" name="q1" value="wrong"/> 
-						<label for="a4">Strangers in the night</label><br></br><br></br>
+						<label for="a4">Strangers in the night</label><br></br><br></br><br></br>
 						
                         <img src={ghost} alt = "ghost" height={150} width={200} /><br></br>
                         <input id="a5" type="radio" name="q2" value="wrong"/> 
@@ -219,7 +236,7 @@ class HomePage extends React.Component {
 						<input id="a7" type="radio" name="q2" value="wrong"/> 
                         <label for="a7">Spider</label><br></br>
 						<input id="a8" type="radio" name="q2" value="correct"/> 
-						<label for="a8">Ghost</label><br></br><br></br>
+						<label for="a8">Ghost</label><br></br><br></br><br></br>
 
                         <img src={spider} alt = "spider" height={150} width={200} /><br></br>
                         <input id="a9" type="radio" name="q3" value="correct"/> 
@@ -229,7 +246,7 @@ class HomePage extends React.Component {
 						<input id="a11" type="radio" name="q3" value="wrong"/>
                         <label for="a11"> CuCuy (monster)</label><br></br>
 						<input id="a12" type="radio" name="q3" value="wrong"/> 
-						<label for="a12">Fly</label><br></br><br></br>
+						<label for="a12">Fly</label><br></br><br></br><br></br>
 						
                         <img src={jack} alt = "jack" height={150} width={200} /><br></br>
                         <input id="a13" type="radio" name="q4" value="wrong"/> 
@@ -239,7 +256,7 @@ class HomePage extends React.Component {
 						<input id="a15" type="radio" name="q4" value="correct"/> 
                         <label for="a15">Jackolantern</label><br></br>
 						<input id="a16" type="radio" name="q4" value="wrong"/> 
-						<label for="a16">Helper</label><br></br><br></br>
+						<label for="a16">Helper</label><br></br><br></br><br></br>
 
                         <img src={fkstn} alt = "fkstn" height={150} width={200} /><br></br>
                         <input id="a17" type="radio" name="q5" value="wrong"/> 
@@ -249,7 +266,7 @@ class HomePage extends React.Component {
 						<input id="a19" type="radio" name="q5" value="wrong"/> 
                         <label for="a19">Neighbor</label><br></br>
 						<input id="a20" type="radio" name="q5" value="correct"/> 
-						<label for="a20">Frankenstein</label><br></br><br></br>
+						<label for="a20">Frankenstein</label><br></br><br></br><br></br>
 						
                         <img src={skull} alt = "skull" height={150} width={200} /><br></br>
                         <input id="a21" type="radio" name="q6" value="wrong"/> 
@@ -259,7 +276,7 @@ class HomePage extends React.Component {
 						<input id="a23" type="radio" name="q6" value="wrong"/> 
                         <label for="a23">Ghost</label><br></br>
 						<input id="a24" type="radio" name="q6" value="wrong"/> 
-						<label for="a24">Warrior</label><br></br><br></br>
+						<label for="a24">Warrior</label><br></br><br></br><br></br>
                         <button className="subButton" type="submit">Submit</button>                
 
                     </form>
@@ -280,7 +297,7 @@ class HomePage extends React.Component {
 						<input id="a3" type="radio" name="q1" value="wrong"/> 
                         <label for="a3">Devil in Disguise</label><br></br>
 						<input id="a4" type="radio" name="q1" value="wrong"/> 
-						<label for="a4">Unbelievable</label><br></br><br></br>
+						<label for="a4">Unbelievable</label><br></br><br></br><br></br>
 						
                         <img src={sly} alt = "sly" height={150} width={200} /><br></br>
                         <input id="a5" type="radio" name="q2" value="wrong"/> 
@@ -290,7 +307,7 @@ class HomePage extends React.Component {
 						<input id="a7" type="radio" name="q2" value="wrong"/> 
                         <label for="a7">Patrick the Hippo</label><br></br>
 						<input id="a8" type="radio" name="q2" value="correct"/> 
-						<label for="a8">Sly Cooper</label><br></br><br></br>
+						<label for="a8">Sly Cooper</label><br></br><br></br><br></br>
 						
                         <img src={bios} alt = "bios" height={150} width={200} /><br></br>
                         <input id="a9" type="radio" name="q3" value="correct"/> 
@@ -300,7 +317,7 @@ class HomePage extends React.Component {
 						<input id="a11" type="radio" name="q3" value="wrong"/> 
                         <label for="a11">Dont do Drugs!</label><br></br>
 						<input id="a12" type="radio" name="q3" value="wrong"/> 
-						<label for="a12">Zombies</label><br></br><br></br>
+						<label for="a12">Zombies</label><br></br><br></br><br></br>
 						
                         <img src={king} alt = "king" height={150} width={200} /><br></br>
                         <input id="a13" type="radio" name="q4" value="wrong"/> 
@@ -310,7 +327,7 @@ class HomePage extends React.Component {
 						<input id="a15" type="radio" name="q4" value="correct"/> 
                         <label for="a15">Kingdom Hearts</label><br></br>
 						<input id="a16" type="radio" name="q4" value="wrong"/> 
-						<label for="a16">Disney</label><br></br><br></br>
+						<label for="a16">Disney</label><br></br><br></br><br></br>
 						
                         <img src={spyro} alt = "spy" height={150} width={200} /><br></br>
                         <input id="a17" type="radio" name="q5" value="wrong"/>
@@ -320,7 +337,7 @@ class HomePage extends React.Component {
 						<input id="a19" type="radio" name="q5" value="wrong"/> 
                         <label for="a19">The Future</label><br></br>
 						<input id="a20" type="radio" name="q5" value="correct"/> 
-						<label for="a20">Spyro</label><br></br><br></br>
+						<label for="a20">Spyro</label><br></br><br></br><br></br>
 						
                         <img src={jackn} alt = "jack" height={150} width={200} /><br></br>
                         <input id="a21" type="radio" name="q6" value="wrong"/> 
@@ -330,7 +347,7 @@ class HomePage extends React.Component {
 						<input id="a23" type="radio" name="q6" value="wrong"/> 
                         <label for="a23">Crash Bash</label><br></br>
 						<input id="a24" type="radio" name="q6" value="wrong"/> 
-						<label for="a24">Bandicoot</label><br></br><br></br>
+						<label for="a24">Bandicoot</label><br></br><br></br><br></br>
 
                         <button className="subButton" type="submit">Submit</button>                
 
@@ -343,8 +360,8 @@ class HomePage extends React.Component {
                 <div className="Results">
                     <h1>Your results are: </h1>
                     <p> {this.state.amountCorrect}/6</p>
-                    <button className="returnHome" type="">Go Home</button><br></br>
-                    <button className="TryAgain" type="">Try Again</button><br></br>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
+                    <button className="TryAgain" onClick={this.restart}>Try Again</button><br></br>
                     
                 </div>
             );
