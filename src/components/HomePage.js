@@ -78,23 +78,25 @@ class HomePage extends React.Component {
     }
 
     restartCnCart = (event) => {
-        
-        this.setState({quizCnCart: true});
+        if(!this.state.quizCnCart){
 
+            this.setState({quizCnCart: true});
+        }
         event.preventDefault();
     }
 
     restartVideoG = (event) => {
-        
-        this.setState({quizVideoG: true});
-
+        if(!this.state.quizVideoG){
+            this.setState({quizVideoG: true});
+        }
         event.preventDefault();
     }
 
     restartHall = (event) => {
-        
-        this.setState({quizHall: true});
+        if(!this.state.quizHall){
 
+            this.setState({quizHall: true});
+        }
         event.preventDefault();
     }
     
