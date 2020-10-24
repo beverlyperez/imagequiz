@@ -251,7 +251,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        else if(this.state.quizHall){
+        if(this.state.quizHall){
             return (
                 <div className="HALL">
                     <h1>What is the name of this halloween item?</h1>
@@ -325,7 +325,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        else if(this.state.quizVideoG){
+        if(this.state.quizVideoG){
             return (
                 <div className="VG">
                     <h1>From which video game is the picture from?</h1>
