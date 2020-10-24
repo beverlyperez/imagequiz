@@ -105,7 +105,7 @@ class HomePage extends React.Component {
     }
 
     render(){
-        if((!this.state.quizCnCart) && (!this.state.quizHall) &&(!this.state.quizVideoG) && (!this.state.results)){
+        if((!this.state.quizCnCart) && (!this.state.quizHall) &&(!this.state.quizVideoG)){
             return (
                 
                 <div className="home">
