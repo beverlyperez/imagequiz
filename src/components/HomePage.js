@@ -129,7 +129,6 @@ class HomePage extends React.Component {
         else{
             this.setState({quizHall: true});
         }
-        this.setState({amountC: amountCorrect});
 
     }
 
