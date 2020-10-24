@@ -36,7 +36,6 @@ import billy from './images/BM.jpg';
 import cour from './images/CCD.png';
 import eee from './images/EEE.jpg';
 import dl from './images/DL.jpg';
-
 class HomePage extends React.Component {
     constructor(props){
         super(props);
@@ -51,21 +50,25 @@ class HomePage extends React.Component {
     }
 
     activateStateV = (event) => {
-        this.setState({quizVideoG: true});
-        
+        if(!this.state.quizVideoG){
+            this.setState({quizVideoG: true});
+        }
         event.preventDefault();
-    }
-
-    activateStateH = (event) => {
-        this.setState({quizHall: true});
-        
-        event.preventDefault();
-    }
     
-    activateStateC = (event) => {
-        this.setState({quizCnCart: true});
-        
+    }
+    activateStateH = (event) => {
+        if(!this.state.quizHall){
+            this.setState({quizHall: true});
+        }
         event.preventDefault();
+    
+    }
+    activateStateC = (event) => {
+        if(!this.state.quizCnCart){
+            this.setState({quizCnCart: true});
+        }
+        event.preventDefault();
+    
     }
 
     EmptyAll = (event) => {
@@ -77,7 +80,29 @@ class HomePage extends React.Component {
         event.preventDefault();
     }
 
-    
+    restartCnCart = (event) => {
+        
+        this.setState({results: false});
+        this.setState({quizCnCart: true});
+
+        event.preventDefault();
+    }
+
+    restartVideoG = (event) => {
+        
+        this.setState({results: false});
+        this.setState({quizVideoG: true});
+
+        event.preventDefault();
+    }
+
+    restartHall = (event) => {
+        
+        this.setState({results: false});
+        this.setState({quizHall: true});
+
+        event.preventDefault();
+    }
     
     onSubmit = (currentState) => {
         var amountCorrect = 0;          
@@ -92,6 +117,7 @@ class HomePage extends React.Component {
             
         }
         this.setState({amountC: amountCorrect});
+        console.log(this.state.amountCorrect + " this is the amount correct");
         this.setState({results: true});
         if(currentState == "cartoons"){
             this.setState({quizCnCart: false});
@@ -105,8 +131,43 @@ class HomePage extends React.Component {
     }
 
     render(){
-            
-       
+        
+        if(this.state.results && this.state.quizVideoG){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>   Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
+                    <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
+        else if(this.state.results && this.state.quizCnCart){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>   Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
+                    <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
+        else if(this.state.results && this.state.quizHall){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>    Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
+                    <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
         if(this.state.quizCnCart){
             return (
                 <div className="CNQ">
@@ -176,17 +237,10 @@ class HomePage extends React.Component {
                         <button className="subButton" type="submit">Submit</button>                
 
                     </form>
-
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>    Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-
-
                 </div>
             );
         }
-        if(this.state.quizHall){
+        else if(this.state.quizHall){
             return (
                 <div className="HALL">
                     <h1>What is the name of this halloween item?</h1>
@@ -253,18 +307,11 @@ class HomePage extends React.Component {
 						<label for="a24">Warrior</label><br></br><br></br><br></br>
                         <button className="subButton" type="submit">Submit</button>                
 
-                    </form><br></br><br></br>
-        
-                
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>    Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-
+                    </form>
                 </div>
             );
         }
-        if(this.state.quizVideoG){
+        else if(this.state.quizVideoG){
             return (
                 <div className="VG">
                     <h1>From which video game is the picture from?</h1>
@@ -333,44 +380,39 @@ class HomePage extends React.Component {
                         <button className="subButton" type="submit">Submit</button>                
 
                     </form>
-
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>    Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-
                 </div>
             );
         }
         else{
-            return(
+            return (
+                
                 <div className="home">
-                <p>Quizes to take:</p>  
+                    <p>Quizes to take:</p>  
+                        <table className="pics">
+                            <tr className="row1">
+                                <td><img src={videoGames} onClick={this.activateStateV} alt = "vg" height={150} width={300} /> Video Games </td>
+                                <td><img src={hallow} onClick={this.activateStateH} alt = "hw" height={150} width={300} /> Halloween </td>
+                                <td><img src={cn} onClick={this.activateStateC} alt = "cn" height={150} width={300}/> Cartoon Network Cartoons </td>                        
+                            </tr>
+                        </table>
+                        <br></br>
                     <table className="pics">
                         <tr className="row1">
-                            <td><img src={videoGames} onClick={this.activateStateV} alt = "vg" height={150} width={300} /> Video Games </td>
-                            <td><img src={hallow} onClick={this.activateStateH} alt = "hw" height={150} width={300} /> Halloween </td>
-                            <td><img src={cn} onClick={this.activateStateC} alt = "cn" height={150} width={300}/> Cartoon Network Cartoons </td>                        
+                            <td><img src={cherryblossom} alt = "cherry" height={150} width={150} /> Cherry Blossom </td>
+                            <td><img src={daffodil} alt = "daffodil" height={150} width={150} /> Daffodil </td>
+                            <td><img src={daisy} alt = "daisy" height={150} width={150}/> Daisy </td>
+                            <td><img src={lily} alt = "lily" height={150} width={150} /> Lily </td>
+                            
+                        </tr>
+                        <tr className="row2">
+                            <td><img src={rose} alt = "rose" height={150} width={150} /> Rose </td>
+                            <td><img src={sunflower} alt = "sunflower" height={150} width={150} /> Sunflower </td>
+                            <td><img src={tulip} alt = "tulip" height={150} width={150} /> Tulip </td>
+                            <td><img src={waterlily} alt = "waterlily" height={150} width={150} /> WaterLily </td>
+                            
                         </tr>
                     </table>
-                    <br></br>
-                <table className="pics">
-                    <tr className="row1">
-                        <td><img src={cherryblossom} alt = "cherry" height={150} width={150} /> Cherry Blossom </td>
-                        <td><img src={daffodil} alt = "daffodil" height={150} width={150} /> Daffodil </td>
-                        <td><img src={daisy} alt = "daisy" height={150} width={150}/> Daisy </td>
-                        <td><img src={lily} alt = "lily" height={150} width={150} /> Lily </td>
-                        
-                    </tr>
-                    <tr className="row2">
-                        <td><img src={rose} alt = "rose" height={150} width={150} /> Rose </td>
-                        <td><img src={sunflower} alt = "sunflower" height={150} width={150} /> Sunflower </td>
-                        <td><img src={tulip} alt = "tulip" height={150} width={150} /> Tulip </td>
-                        <td><img src={waterlily} alt = "waterlily" height={150} width={150} /> WaterLily </td>
-                        
-                    </tr>
-                </table>
-            
+                
                 </div>  
             );
         }
@@ -381,3 +423,4 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
+
