@@ -113,7 +113,7 @@ class HomePage extends React.Component {
         event.preventDefault();
     }
     
-    onSubmit = (event, currentState) => {
+    onSubmit = (currentState) => {
         var amountCorrect = 0;          
         for(var i = 1; i <= 6; i++) {
             var radios = document.getElementsByName('q'+i);
@@ -125,7 +125,6 @@ class HomePage extends React.Component {
             }
             
         }
-        event.preventDefault();
 
         this.setState({amountC: amountCorrect});
         console.log(this.state.amountCorrect + " this is the amount correct");
