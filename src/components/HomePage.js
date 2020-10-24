@@ -134,7 +134,7 @@ class HomePage extends React.Component {
         else if(currentState == "videog"){
             this.setState({quizVideoG: false});
         }
-        else if(currentState == "halloween"){
+        else{
             this.setState({quizHall: false});
         }
         this.setState({results: true});
@@ -209,6 +209,7 @@ class HomePage extends React.Component {
                         <input id="a24" type="radio" name="q6" value="wrong"/>
                         <label for="a24">Battle Stations</label><br></br><br></br><br></br>
                     </form>
+                    <button className="subButton" onClick={this.onSubmit}>Submit</button>     <br></br><br></br>
 
                     <h1>Your results are: </h1><br></br>
                     <p>{this.state.amountCorrect}</p><br></br>
@@ -286,6 +287,7 @@ class HomePage extends React.Component {
 						<label for="a24">Warrior</label><br></br><br></br><br></br>
 
                     </form>
+                    <button className="subButton" onClick={this.onSubmit}>Submit</button>     <br></br><br></br>
 
                     <h1>Your results are: </h1><br></br>
                     <p>{this.state.amountCorrect}</p><br></br>
@@ -362,6 +364,7 @@ class HomePage extends React.Component {
 						<input id="a24" type="radio" name="q6" value="wrong"/> 
 						<label for="a24">Bandicoot</label><br></br><br></br><br></br>
                     </form>
+                    <button className="subButton" onClick={this.onSubmit}>Submit</button>     <br></br><br></br>
 
                     <h1>Your results are: </h1><br></br>
                     <p>{this.state.amountCorrect}</p><br></br>
