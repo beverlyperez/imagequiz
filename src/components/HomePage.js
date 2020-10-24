@@ -147,7 +147,7 @@ class HomePage extends React.Component {
             return (
                 <div className="CNQ">
                     <h1>Which cartoon show from Cartoon Network, does the picture show?</h1>
-                    <form id="quiz" onSubmit={this.onSubmit("cartoons")}>
+                    <form id="quiz" >
                         
                         <img src={knd} alt = "kids" height={150} width={200} /><br></br>
                         <input id="a1" type="radio" name="q1" value="wrong"/>
@@ -209,7 +209,6 @@ class HomePage extends React.Component {
                         <input id="a24" type="radio" name="q6" value="wrong"/>
                         <label for="a24">Battle Stations</label><br></br><br></br><br></br>
 
-                        <button className="subButton" type="submit">Submit</button>     <br></br><br></br>           
 
                     </form>
 
