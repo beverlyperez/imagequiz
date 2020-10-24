@@ -129,13 +129,13 @@ class HomePage extends React.Component {
         
         console.log(this.state.amountCorrect + " this is the amount correct");
         if(currentState == "cartoons"){
-            this.setState({quizCnCart: false}, {results: true}, {amountC: amountCorrect});
+            this.setState({quizCnCart: false, results: true, amountC: amountCorrect});
         }
         else if(currentState == "videog"){
-            this.setState({quizVideoG: false}, {results: true}, {amountC: amountCorrect});
+            this.setState({quizVideoG: false, results: true, amountC: amountCorrect});
         }
         else{
-            this.setState({quizHall: false}, {results: true}, {amountC: amountCorrect});
+            this.setState({quizHall: false, results: true, amountC: amountCorrect});
         }
      
     }
@@ -249,7 +249,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.quizHall){
+        else if(this.state.quizHall){
             return (
                 <div className="HALL">
                     <h1>What is the name of this halloween item?</h1>
@@ -323,7 +323,7 @@ class HomePage extends React.Component {
                 </div>
             );
         }
-        if(this.state.quizVideoG){
+        else if(this.state.quizVideoG){
             return (
                 <div className="VG">
                     <h1>From which video game is the picture from?</h1>
