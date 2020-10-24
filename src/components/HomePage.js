@@ -44,7 +44,7 @@ class HomePage extends React.Component {
             quizHall: false,
             quizVideoG: false, 
             results: false,
-            amountCorrect: 0
+            amountC: 0
         };
 
     }
