@@ -137,7 +137,7 @@ class HomePage extends React.Component {
         else{
             this.setState({quizHall: false});
         }
-        this.setState({results: false});
+        this.setState({results: true});
         this.setState({amountC: amountCorrect});
 
     }
