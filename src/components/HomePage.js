@@ -43,16 +43,14 @@ class HomePage extends React.Component {
             quizCnCart: false,
             quizHall: false,
             quizVideoG: false, 
-            results: false,
             amountCorrect: 0
         };
 
     }
 
     activateStateV = (event) => {
-        if(!this.state.quizVideoG){
-            this.setState({quizVideoG: true});
-        }
+        this.setState({quizVideoG: true});
+        
         event.preventDefault();
     
     }
@@ -75,14 +73,12 @@ class HomePage extends React.Component {
         this.setState({quizCnCart: false});
         this.setState({quizHall: false});
         this.setState({quizVideoG: false});
-        this.setState({results: false});
         this.setState({amountC: 0});
         event.preventDefault();
     }
 
     restartCnCart = (event) => {
         
-        this.setState({results: false});
         this.setState({quizCnCart: true});
 
         event.preventDefault();
@@ -90,7 +86,6 @@ class HomePage extends React.Component {
 
     restartVideoG = (event) => {
         
-        this.setState({results: false});
         this.setState({quizVideoG: true});
 
         event.preventDefault();
@@ -98,7 +93,6 @@ class HomePage extends React.Component {
 
     restartHall = (event) => {
         
-        this.setState({results: false});
         this.setState({quizHall: true});
 
         event.preventDefault();
@@ -118,7 +112,6 @@ class HomePage extends React.Component {
         }
         this.setState({amountC: amountCorrect});
         console.log(this.state.amountCorrect + " this is the amount correct");
-        this.setState({results: true});
         if(currentState == "cartoons"){
             this.setState({quizCnCart: false});
         }
@@ -132,42 +125,6 @@ class HomePage extends React.Component {
 
     render(){
         
-        if(this.state.results && this.state.quizVideoG){
-            return(
-                <div className="Results">
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>   Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
-                    <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
-                    
-                </div>
-            );
-        }
-        else if(this.state.results && this.state.quizCnCart){
-            return(
-                <div className="Results">
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>   Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
-                    <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
-                    
-                </div>
-            );
-        }
-        else if(this.state.results && this.state.quizHall){
-            return(
-                <div className="Results">
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p>
-                    <p>    Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
-                    <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
-                    
-                </div>
-            );
-        }
         if(this.state.quizCnCart){
             return (
                 <div className="CNQ">
@@ -234,9 +191,16 @@ class HomePage extends React.Component {
                         <input id="a24" type="radio" name="q6" value="wrong"/>
                         <label for="a24">Battle Stations</label><br></br><br></br><br></br>
 
-                        <button className="subButton" type="submit">Submit</button>                
+                        <button className="subButton" type="submit">Submit</button>     <br></br><br></br>           
 
                     </form>
+
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p><br></br>
+                    <p>   Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
+                    <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
+                    
                 </div>
             );
         }
@@ -308,6 +272,13 @@ class HomePage extends React.Component {
                         <button className="subButton" type="submit">Submit</button>                
 
                     </form>
+
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p><br></br>
+                    <p>    Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
+                    <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
+                    
                 </div>
             );
         }
@@ -380,6 +351,13 @@ class HomePage extends React.Component {
                         <button className="subButton" type="submit">Submit</button>                
 
                     </form>
+
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p><br></br>
+                    <p>   Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
+                    <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
+
                 </div>
             );
         }
