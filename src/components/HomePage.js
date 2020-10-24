@@ -126,23 +126,58 @@ class HomePage extends React.Component {
             
         }
 
-        this.setState({amountC: amountCorrect});
+        
         console.log(this.state.amountCorrect + " this is the amount correct");
         if(currentState == "cartoons"){
-            this.setState({quizCnCart: false});
+            this.setState({quizCnCart: false}, {results: true}, {amountC: amountCorrect});
         }
         else if(currentState == "videog"){
-            this.setState({quizVideoG: false});
+            this.setState({quizVideoG: false}, {results: true}, {amountC: amountCorrect});
         }
-        else if(currentState == "halloween"){
-            this.setState({quizHall: false});
+        else{
+            this.setState({quizHall: false}, {results: true}, {amountC: amountCorrect});
         }
-        this.setState({results: true});
-
+     
     }
 
     render(){
-        
+        if(this.state.results && this.state.quizVideoG){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>   Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
+                    <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
+        else if(this.state.results && this.state.quizCnCart){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>   Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
+                    <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
+        else if(this.state.results && this.state.quizHall){
+            return(
+                <div className="Results">
+                    <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>    Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
+                    <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
+                    
+                </div>
+            );
+        }
+
         if(this.state.quizCnCart){
             return (
                 <div className="CNQ">
@@ -208,16 +243,9 @@ class HomePage extends React.Component {
                         <label for="a23">Power Puff Girls</label><br></br>
                         <input id="a24" type="radio" name="q6" value="wrong"/>
                         <label for="a24">Battle Stations</label><br></br><br></br><br></br>
-
+                        <button className="subm" onClick={this.onSubmit("cartoons")}>Submit</button><br></br><br></br>
 
                     </form>
-
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p><br></br>
-                    <p>   Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
-                    <button className="TryAgain" onClick={this.restartCnCart}>Try Again</button><br></br>
-                    
                 </div>
             );
         }
@@ -225,7 +253,7 @@ class HomePage extends React.Component {
             return (
                 <div className="HALL">
                     <h1>What is the name of this halloween item?</h1>
-                    <form id="quiz" onSubmit={this.onSubmit("halloween")}>
+                    <form id="quiz" >
                         
                         <img src={witch} alt = "witch" height={150} width={200} /><br></br>
                         <input id="answer" type="radio" name="q1" value="wrong"/> 
@@ -286,15 +314,11 @@ class HomePage extends React.Component {
                         <label for="a23">Ghost</label><br></br>
 						<input id="a24" type="radio" name="q6" value="wrong"/> 
 						<label for="a24">Warrior</label><br></br><br></br><br></br>
-                        <button className="subButton" type="submit">Submit</button>                
+                        <button className="subm" onClick={this.onSubmit("halloween")}>Submit</button><br></br><br></br>
 
                     </form>
 
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p><br></br>
-                    <p>    Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
-                    <button className="TryAgain" onClick={this.restartHall}>Try Again</button><br></br>
+                    
                     
                 </div>
             );
@@ -303,7 +327,7 @@ class HomePage extends React.Component {
             return (
                 <div className="VG">
                     <h1>From which video game is the picture from?</h1>
-                    <form id="quiz" onSubmit={this.onSubmit("videog")}>
+                    <form id="quiz">
                         
                         <img src={unc} alt = "unc" height={150} width={200} /><br></br>
                         <input id="a1" type="radio" name="q1" value="wrong"/> 
@@ -365,15 +389,10 @@ class HomePage extends React.Component {
 						<input id="a24" type="radio" name="q6" value="wrong"/> 
 						<label for="a24">Bandicoot</label><br></br><br></br><br></br>
 
-                        <button className="subButton" type="submit">Submit</button>                
+                        <button className="subm" onClick={this.onSubmit("videog")}>Submit</button><br></br><br></br>
 
                     </form>
 
-                    <h1>Your results are: </h1><br></br>
-                    <p>{this.state.amountCorrect}</p><br></br>
-                    <p>   Out of 6 correct</p>
-                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br><br></br>
-                    <button className="TryAgain" onClick={this.restartVideoG}>Try Again</button><br></br>
 
                 </div>
             );
