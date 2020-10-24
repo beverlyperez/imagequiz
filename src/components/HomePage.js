@@ -377,6 +377,17 @@ class HomePage extends React.Component {
                 </div>
             );
         }
+        else{
+            return(
+                <div className="testing">
+                <h1>Your results are: </h1><br></br>
+                    <p>{this.state.amountCorrect}</p>
+                    <p>    Out of 6 correct</p>
+                    <button className="returnHome" onClick={this.EmptyAll}>Go Home</button><br></br>
+
+                </div>
+            );
+        }
         
 
     }
