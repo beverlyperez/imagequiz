@@ -43,20 +43,26 @@ class HomePage extends React.Component {
             quizCnCart: false,
             quizHall: false,
             quizVideoG: false, 
+            results: false,
             amountCorrect: 0
         };
 
     }
 
     activateStateV = (event) => {
-        this.setState({quizVideoG: true});
-        
+        if(!this.state.quizVideoG){
+            this.setState({quizVideoG: true});
+            this.setState({results: false});
+        }
         event.preventDefault();
     
     }
     activateStateH = (event) => {
         if(!this.state.quizHall){
+
             this.setState({quizHall: true});
+            this.setState({results: false});
+
         }
         event.preventDefault();
     
@@ -64,6 +70,8 @@ class HomePage extends React.Component {
     activateStateC = (event) => {
         if(!this.state.quizCnCart){
             this.setState({quizCnCart: true});
+            this.setState({results: false});
+
         }
         event.preventDefault();
     
@@ -73,12 +81,14 @@ class HomePage extends React.Component {
         this.setState({quizCnCart: false});
         this.setState({quizHall: false});
         this.setState({quizVideoG: false});
+        this.setState({results: false});
         this.setState({amountC: 0});
         event.preventDefault();
     }
 
     restartCnCart = (event) => {
         if(!this.state.quizCnCart){
+            this.setState({results: false});
 
             this.setState({quizCnCart: true});
         }
@@ -87,6 +97,8 @@ class HomePage extends React.Component {
 
     restartVideoG = (event) => {
         if(!this.state.quizVideoG){
+            this.setState({results: false});
+
             this.setState({quizVideoG: true});
         }
         event.preventDefault();
@@ -94,6 +106,7 @@ class HomePage extends React.Component {
 
     restartHall = (event) => {
         if(!this.state.quizHall){
+            this.setState({results: false});
 
             this.setState({quizHall: true});
         }
@@ -123,6 +136,8 @@ class HomePage extends React.Component {
         else if(currentState == "halloween"){
             this.setState({quizHall: false});
         }
+        this.setState({results: true});
+
     }
 
     render(){
