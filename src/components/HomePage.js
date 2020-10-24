@@ -51,23 +51,20 @@ class HomePage extends React.Component {
     }
 
     activateStateV = (event) => {
-        if(!this.state.quizVideoG){
-            this.setState({quizVideoG: true});
-        }
+        this.setState({quizVideoG: true});
+        
         event.preventDefault();
     }
 
     activateStateH = (event) => {
-        if(!this.state.quizHall){
-            this.setState({quizHall: true});
-        }
+        this.setState({quizHall: true});
+        
         event.preventDefault();
     }
     
     activateStateC = (event) => {
-        if(!this.state.quizCnCart){
-            this.setState({quizCnCart: true});
-        }
+        this.setState({quizCnCart: true});
+        
         event.preventDefault();
     }
 
