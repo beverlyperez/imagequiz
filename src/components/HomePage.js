@@ -134,7 +134,7 @@ class HomePage extends React.Component {
         else if(currentState == "videog"){
             this.setState({quizVideoG: false});
         }
-        else{
+        else if(currentState == "halloween"){
             this.setState({quizHall: false});
         }
         this.setState({results: true});
