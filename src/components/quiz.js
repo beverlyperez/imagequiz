@@ -9,7 +9,6 @@ constructor(props){
     this.state = {
        cursor: 0,
        score: 0,
-       lastAnswerCorrect: false
     };
 
 }
@@ -20,7 +19,10 @@ componentDidMount(){
     if(location){
         if(location.state){
             if(location.state.quiz){
-                quiz = location.state.quiz
+                quiz = location.state.quiz;
+                server.fetchQuestions(quiz.id).then(x => this.setState({ quiz: { questions: x } })).catch(e => console.log(e));
+                
+                
             }
         }
     }
