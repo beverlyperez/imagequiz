@@ -1,7 +1,10 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Link
+  } from 'react-router-dom';
 import './homePage.css';
 import server from './server';
-import {Link} from 'react-router-dom';
 class HomePage extends React.Component {
     constructor(props){
         super(props);
@@ -17,11 +20,12 @@ class HomePage extends React.Component {
 
 
     render(){
-         const location = this.props.location;
+        let username = '';
+        const location = this.props.location;
         if(location){
             if(location.state){
-                if(location.state.quiz){
-                    quiz = location.state.quiz
+                if(location.state.user){
+                    username = location.state.user;
                 }
             }
         }
@@ -30,14 +34,14 @@ class HomePage extends React.Component {
        
         <div className="home">
             <p>Quizes to take:</p>  
-                {this.state.quizzes.map(q =>
-                    <Link to = {{pathname: '/quiz', state:{quiz:q}}}>
+            <Router> {this.state.quizzes.map(q =>
+                    <Link to = {{pathname: '/quiz/', state:{quiz:q}}}>
                         <figure>
-                            <img src={require('/images/'+q.picture)} alt={q.title}></img>
+                            <img src={require("./images/" + q.picture)} alt={q.title}></img>
                             <figcaption>{q.title}</figcaption>
                         </figure>
                     </Link>)}
-                
+                    </Router>
         </div>  
     );
         
